@@ -4,6 +4,8 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.fungover.jee2025.dto.CreateBook;
 
+import java.util.EnumMap;
+
 public class ValidBookValidator implements ConstraintValidator<ValidBook, CreateBook> {
     @Override
     public boolean isValid(CreateBook createBook, ConstraintValidatorContext constraintValidatorContext) {

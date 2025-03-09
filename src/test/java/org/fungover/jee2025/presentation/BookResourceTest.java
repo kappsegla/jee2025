@@ -53,7 +53,8 @@ public class BookResourceTest {
         dispatcher.invoke(request, response);
         // Assert the response status code and content
         assertEquals(200, response.getStatus());
-        assertEquals("[]", response.getContentAsString());
+        assertEquals("""
+                {"data":[]}""", response.getContentAsString());
     }
 
     @Test
