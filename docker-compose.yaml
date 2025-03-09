@@ -11,8 +11,8 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
   server:
-    profiles:
-      - complete
+    #profiles:
+     # - complete
     build:
       context: .
     environment:

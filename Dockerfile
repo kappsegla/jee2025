@@ -16,12 +16,12 @@ WORKDIR /opt/jboss
 RUN groupadd -r jboss -g 1000 && useradd -u 1000 -r -g jboss -m -d /opt/jboss -s /sbin/nologin -c "JBoss user" jboss \
     && chmod 755 /opt/jboss
 
-# Set environment variables
-ARG JBOSS_HOME=/opt/jboss/wildfly
 ARG WILDFLY_VERSION=35.0.1.Final
 ARG WILDFLY_SHA1=35e61cfe2b14bab1f0644d4967090fe7de8590dd
 ARG POSTGRESQL_DRIVER_VERSION=42.7.5
 ARG POSTGRESQL_JDBC_DRIVER=postgresql-${POSTGRESQL_DRIVER_VERSION}.jar
+# Set environment variables
+ENV JBOSS_HOME=/opt/jboss/wildfly
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND=true
 
