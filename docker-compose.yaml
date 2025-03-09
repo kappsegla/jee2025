@@ -17,6 +17,9 @@ services:
       context: .
     environment:
       DB_HOST: postgres
+      DB_NAME: example
+      DB_USER: postgres
+      DB_PASSWORD: postgres
     ports:
       - "8080:8080"
 
