@@ -1,5 +1,5 @@
 # By default, build on JDK 21 on UBI 9.
-ARG jdk=23
+ARG jdk=23-jre
 ARG dist=ubi9-minimal
 FROM eclipse-temurin:${jdk}-${dist}
 
