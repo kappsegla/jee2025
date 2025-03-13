@@ -29,7 +29,7 @@ public class BookService {
 
 
     public List<BookResponse> getAllBooks() {
-        return repository.findAll()
+        return repository.findByPageCountGreaterThan(10)
                 .map(BookResponse::new)
                 .filter(Objects::nonNull)
                 .toList();

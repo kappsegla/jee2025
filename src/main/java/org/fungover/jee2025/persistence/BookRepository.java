@@ -1,12 +1,10 @@
 package org.fungover.jee2025.persistence;
 
-import jakarta.data.repository.CrudRepository;
-import jakarta.data.repository.Find;
-import jakarta.data.repository.Repository;
-import jakarta.data.repository.Save;
+import jakarta.data.repository.*;
 import org.fungover.jee2025.entity.Book;
 
 import java.util.Optional;
+import java.util.stream.Stream;
 
 
 //https://thorben-janssen.com/getting-started-with-jakarta-data/
@@ -17,4 +15,8 @@ public interface BookRepository extends CrudRepository<Book, Long> {
     // Grundläggande CRUD-operationer finns redan via CrudRepository
     @Find
     Optional<Book> findByTitle(String title);
+
+    @Query("select b from Book b where pageCount > :pageCount")
+    Stream<Book> findByPageCountGreaterThan(int pageCount);
+
 }
